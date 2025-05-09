@@ -6,12 +6,14 @@ def main():
     if len(sys.argv) == 2:
         try: 
             n = int(sys.argv[1])
-            if n >= 0:
+            if n >= 0 and n%2 == 0:
                 pass
             else:
                 L = False
         except ValueError:
             L = False
+    else:
+        L = False
 
     # detecting correct uses
     if L == False:
@@ -20,6 +22,9 @@ def main():
                 n = int(input("What's the number? "))
                 if n < 0:
                     print("Please put an positive interger")
+                    continue
+                if n%2 != 0:
+                    print("Please put an even positive interger")
                     continue
                 break
             except ValueError:
